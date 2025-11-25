@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
+import 'theme/app_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,20 +12,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Minimalist Habit Tracker',
+      title: 'Soft Habits',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        useMaterial3: true,
-        brightness: Brightness.dark,
-        scaffoldBackgroundColor: const Color(0xFF1C1C1E),
-        colorScheme: const ColorScheme.dark(
-          primary: Color(0xFFD0BCFF),
-          secondary: Color(0xFFCCC2DC),
-          surface: Color(0xFF1C1C1E),
-          background: Color(0xFF1C1C1E),
-        ),
-        fontFamily: 'Roboto', // Clean sans-serif default
-      ),
+      theme: AppTheme.darkTheme, // Applying the custom soft dark theme
       initialRoute: '/',
       routes: {
         '/': (context) => const HomeScreen(),
